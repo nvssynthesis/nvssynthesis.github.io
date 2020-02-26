@@ -1,20 +1,28 @@
+html {
+    font-family: "Courier New", Times, serif;
+    background: black;
+    color: white;
+}
+
 body {
 	margin: 0;
 }
 
 header {
-	background: #999;
+	background: black;
 	color: white;
 }
 
 header h1 {
 	margin: 0;
 	display: flex;
+	color: white;
 }
 
 nav ul {
-	margin: 0px 0px 0px 15px;
+	margin: 0px 0px 0px 10px;
 	display: inline-block;
+	font-size: 12px;
 }
 
 
@@ -30,9 +38,8 @@ nav ul li a {
 	color: white;
 }
 
-.sidenav {
-	color: #777;
-	background: #345;
+p {
+    font-size: 14px;
 }
 
 .sidenav a {
