@@ -2,6 +2,7 @@ html {
     font-family: "Courier New", Times, serif;
     background: black;
     color: white;
+    line-height: 120%;
 }
 
 body {
@@ -11,10 +12,11 @@ body {
 header {
 	background: black;
 	color: white;
+	margin: 0% 0% 0% 2%;
 }
 
 header h1 {
-	margin: 0;
+	margin: 20;
 	display: flex;
 	color: white;
 }
@@ -38,8 +40,9 @@ nav ul li a {
 	color: white;
 }
 
-p {
+body p {
     font-size: 14px;
+    margin: 2% 0% 0% 2%;
 }
 
 ul li {
