@@ -53,6 +53,20 @@ ul li li {
 }
 
 
+a:link  {
+	color: white;
+}
+a:visited {
+	color: #5985ff;
+}
+
+a:hover {
+	color: pink;
+}
+a:active {
+	color: purple;
+}
+
 /*
 .sidenav a {
 	padding: 6px 8px 6px 16px;
