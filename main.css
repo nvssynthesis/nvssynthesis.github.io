@@ -70,6 +70,11 @@ a:active {
 	color: purple;
 }
 
+address {
+  display: block;
+  /*font-style: underline;*/
+}
+
 /*
 .sidenav a {
 	padding: 6px 8px 6px 16px;
