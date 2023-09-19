@@ -6,13 +6,13 @@ html {
 }
 
 body {
-	margin: 0;
+	margin: auto;
 }
 
 header {
 	background: black;
 	color: white;
-	margin: 0% 0% 0% 2%;
+	margin: auto;/*0% 0% 0% 2%;*/
 }
 
 header h1 {
@@ -22,7 +22,7 @@ header h1 {
 }
 
 nav ul {
-	margin: 0px 0px 0px 10px;
+	margin: auto;/*0px 0px 0px 10px;*/
 	display: inline-block;
 	font-size: 12px;
 }
@@ -42,7 +42,7 @@ nav ul li a {
 
 body p {
     font-size: 14px;
-    margin: 2% 0% 0% 2%;
+    margin: auto;/*2% 0% 0% 2%;*/
 }
 
 ul li {
