@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>tsara-additive</title>
+		<link href="main.css" rel="stylesheet" type="text/css"/>
+	</head>
+
+	<body>
+		<header>
+		<h1>Nicholas Solem</h1>
+			<nav>
+				<ul>
+					<li><a href="index.html">home</a></li>
+					<li><a href="projects.html">projects</a></li>
+					<li><a href="links.html">links</a></li>
+					<li><a href="contact.html">contact</a></li>
+				</ul>
+			</nav>
+		</header>
+		<h2>tsara-additive</h2>
+		<p>
+			tsara-additive is an additive synthesizer that makes use of timbral analysis and graph theory. 
+		</p><br>
+		<p>
+			How do these concepts bind together to create this device? It is similar to the other 'tsara' synthesizers I am working on in my dissertation. In order to play sound with tsara-additive, you must first analyze an audio file using the TimbreSpaceAnalysisResynthesis Application (TSARA). This creates an analysis file, which holds the information necessary to resynthesize the sound, as well as describe the timbral qualities of the sound over time.
+		</p><br>
+		<p>
+			With this complete, you can load the analysis file into tsara-additive. From here, the synth will perform one more analysis, this time in a relational manner and using the previous analysis rather than raw audio, to build a graph structure. To put it simply, each frame of the sound is assigned a <i>node</i>. The nodes corresponding with similar-sounding frames get connected with an <i>edge</i>.
+		</p><br>
+		<p>
+			Additive synthesis affords the ability to resynthesize spectral frames of the original recorded sound; the addition of the timbrally-connected graph structure affords the capability of navigating through the <i>timbre space</i> of the recording. tsara-additive currently possesses a handful of navigation methods. There shall be some more sophisticated abilities in the near future.
+		</p>
+	</body>
+
+</html>
