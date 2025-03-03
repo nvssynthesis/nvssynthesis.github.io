@@ -20,7 +20,7 @@
 		<h2>slicer granular</h2>
 		<!-- insert impressive video link -->
 		<p>
-			slicer-granular is a granular synthesizer. The intention in building this synth is to act as the backbone of the near-future project, tsara-granular. tsara granular will have all of the basic granular synthesis capabilities of slicer-granular, plus the multidimensional navigation via timbral analysis afforded by the TSARA application.
+			slicer-granular is a granular synthesizer. The intention in building this synth is to act as the backbone of the more advanced tsn-granular. tsn granular will have all of the basic granular synthesis capabilities of slicer-granular, plus the multidimensional navigation via timbral analysis afforded by the TSN (timbre space navigation) paradigm.
 			<br>
 			Each parameter of slicer-granular has an overall offset setting (vertical slider), plus a randomozation amount (rotary knob). The randomization amount determines how much the parameter will randomly vary at the onset of a new grain. The parameters include:
 			<ul>
@@ -53,15 +53,6 @@
 					<li>affects the panning of each grain. left=low, right=high. </li>
 					<li>the overall offset setting (vertical slider) is not a very exciting parameter, and most of the time you will want to just turn up the randomization parameter to taste. however, the slider <i>does</i> have the capability to do something that you can't simply do with a panning plugin or pan knob in a DAW channel when you need it. It is the fact that the paramater (in this case panning) changes synchronously with each new grain, coupled with the fact that the randomization parameter will push the parameter from the initial position. So, if you have the basic parameter all the way down (left), but the randomization all the way up, most grains will be on the left, but you will occassionally get some drastically in the right channel.</li>
 				</ul>
-			</ul>
-		</p>
-		<p>
-			The biggest TODOs include:
-			<ul>
-				<li>make randomization parameters gaussian (so slider would control mean, knob would control variance)</li>
-				<li>improve the way that the envelopes of each <i>note</i> is accomplished. as it stands, it's basically a sustain envelope, albeit with fades from each grain. </li>
-				<li>improve the way polyphony works. as it stands, when you play multiple notes, they get randomly assigned to different grains.</li>
-				<li>add the capability to navigate (play through) the loaded audio. in effect, this is just modulating the 'position' parameter. but this is tricky from a design perspective with the current GUI.</li>
 			</ul>
 		</p>
 	</body>
