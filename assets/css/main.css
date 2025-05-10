@@ -126,6 +126,17 @@ address {
         max-width: 100%;
     }
 }
+/* Center and make YouTube videos responsive */
+.responsive-video {
+    display: block; /* Treat the iframe as a block element */
+    margin: 0 auto; /* Center the iframe horizontally */
+    width: 80%; /* Set a default width (adjust as needed) */
+    max-width: 800px; /* Limit the maximum width */
+    height: auto; /* Maintain aspect ratio */
+    aspect-ratio: 16 / 9; /* Ensure the video maintains a 16:9 aspect ratio */
+    border-radius: 8px; /* Optional: Add rounded corners */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional: Add a subtle shadow */
+}
 /*
 .sidenav a {
 	padding: 6px 8px 6px 16px;
