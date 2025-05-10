@@ -1,43 +1,49 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<title>modular</title>
-		<link href="main.css" rel="stylesheet" type="text/css"/>
-	</head>
+    <head>
+        <title>DIY Modular Builds</title>
+        <link href="assets/css/main.css" rel="stylesheet" type="text/css"/>
+    </head>
 
-	<body>
-		<header>
-		<h1>Nicholas Solem</h1>
-			<nav>
-				<ul>
-					<li><a href="index.html">home</a></li>
-					<li><a href="projects.html">projects</a></li>
-					<li><a href="links.html">links</a></li>
-					<li><a href="contact.html">contact</a></li>
-				</ul>
-			</nav>
-		</header>
-		<h2>modular</h2>
-		<p>Here is a showcase of some synthesizer modules I have built. <a href="contact.html">Contact</a> me if you ever want someone to build and test a synth module for you!</p>
-		<img border="0" alt="nonlinearcircuits 4seq" src="modules/4seq1.jpg" width="306" height="408"> <br>
-		<img border="0" alt="nonlinearcircuits 4seq" src="modules/4seq2.jpg" width="306" height="408"> <br>
-		<img border="0" alt="elby es78 vca" src="modules/es78_1.jpg" width="306" height="408"> <br>
-		<img border="0" alt="elby es78 vca" src="modules/es78_2.jpg" width="306" height="408"> <br>
-		<img border="0" alt="nonlinearcircuits fk1t" src="modules/fk1t1.jpg" width="306" height="408"> <br>
-		<img border="0" alt="nonlinearcircuits fk1t" src="modules/fk1t2.jpg" width="306" height="408"> <br>
-		<img border="0" alt="nonlinearcircuits fk1t" src="modules/fk1t3.jpg" width="306" height="408"> <br>
-		<img border="0" alt="nonlinearcircuits fk1t" src="modules/fk1t4.jpg" width="306" height="408"> <br>
-		<img border="0" alt="nonlinearcircuits fk1t" src="modules/fk1t5.jpg" width="306" height="408"> <br>
-		<img border="0" alt="manhattan analog VCA" src="modules/MA_vca_side.jpg" width="306" height="408"> <br>
-		<img border="0" alt="nonlinearcircuits router" src="modules/router1.jpg" width="306" height="408"> <br>
-		<img border="0" alt="nonlinearcircuits router" src="modules/router2.jpg" width="306" height="408"> <br>
-		<img border="0" alt="nonlinearcircuits segue" src="modules/segue1.jpg" width="306" height="408"> <br>
-		<img border="0" alt="nonlinearcircuits segue" src="modules/segue2.jpg" width="306" height="408"> <br>
-		<img border="0" alt="nonlinearcircuits timbre" src="modules/timbre1.jpg" width="306" height="408"> <br>
-		<img border="0" alt="nonlinearcircuits timbre" src="modules/timbre2.jpg" width="306" height="408"> <br>
-		<img border="0" alt="nonlinearcircuits vactrol pill" src="modules/vacpill1.jpg" width="306" height="408"> <br>
-		<img border="0" alt="nonlinearcircuits vactrol pill" src="modules/vacpill2.jpg" width="306" height="408"> <br>
-		<img border="0" alt="nonlinearcircuits vactrol pill" src="modules/vacpill3.jpg" width="306" height="408"> <br>
-		<img border="0" alt="nonlinearcircuits vactrol pill" src="modules/vacpill4.jpg" width="306" height="408"> <br>
-	</body>
+    <body>
+        <header>
+            <h1>nvssynthesis</h1>
+            <nav>
+                <ul>
+                    <li><a href="index.html">home</a></li>
+                    <li><a href="projects.html">projects</a></li>
+                    <li><a href="links.html">links</a></li>
+                    <li><a href="contact.html">contact</a></li>
+                </ul>
+            </nav>
+        </header>
+        <h2>modular</h2>
+        <p>Here is a showcase of some synthesizer modules I have built. None of these modules are my own design; 
+            this page aims merely to show that my passion for synthesis and maker-mindset extends to hardware. <a href="contact.html">Contact</a> me if you ever want someone to build and test a synth module for you!</p>
+        
+		<div id="image-gallery" class="image-gallery"></div>
+
+		<script>
+			// JavaScript to dynamically load images
+			const imageFolder = "assets/images/modules/";
+			const images = [
+				"beat_freq1.jpg", "beat_freq2.jpg", "statues1.jpg", "statues2.jpg",
+				"4seq1.jpg", "4seq2.jpg", "es78_1.jpg", "es78_2.jpg", 
+				"fk1t1.jpg", "fk1t2.jpg", "fk1t3.jpg", "fk1t4.jpg", "fk1t5.jpg",
+				"MA_vca_side.jpg", "router1.jpg", "router2.jpg", 
+				"segue1.jpg", "segue2.jpg", "timbre1.jpg", "timbre2.jpg", 
+				"vacpill1.jpg", "vacpill2.jpg", "vacpill3.jpg", "vacpill4.jpg"
+			];
+		
+			const gallery = document.getElementById("image-gallery");
+		
+			images.forEach(image => {
+				const imgElement = document.createElement("img");
+				imgElement.src = imageFolder + image;
+				imgElement.alt = image.split(".")[0];
+				imgElement.classList.add("gallery-image");
+				gallery.appendChild(imgElement);
+			});
+		</script>
+    </body>
 </html>

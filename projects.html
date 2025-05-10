@@ -8,8 +8,8 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>projects</title>
-		<link href="main.css" rel="stylesheet" type="text/css"/>
+		<title>software</title>
+		<link href="assets/css/main.css" rel="stylesheet" type="text/css"/>
 		<style>
 		.center {
 		  margin: auto;
@@ -21,7 +21,7 @@
 
 	<body>
 		<header>
-		<h1>Nicholas Solem</h1>
+		<h1>nvssynthesis</h1>
 			<nav>
 				<ul>
 					<li><a href="index.html">home</a></li>
@@ -31,86 +31,103 @@
 				</ul>
 			</nav>
 		</header>
-		<div class="center">
-		<h2>projects</h2>
-		<p>
-			Here is a partial list of my software development projects.
-		</p>
-		<ul>
-			<li><a href="slicer_granular.html">slicer-granular</a> <br>
-				<img border="0" alt="slicer granular" src="slicer-granular.jpg"width="405" height="245">
-				<ul>
-					<li><a href="https://github.com/nvssynthesis/slicer_granular"> download </a></li>
-					<li><a href="https://youtu.be/HsOIzlNEIDU?si=B0wsG_hkSkqrWcqI"> video </a></li>
-				</ul>
-			</li>
-			<li>shredverb <br>
-				<img border="0" alt="shredverb" src="shredverb_pic.png" width="380" height="460"> 
-				<ul>
-					<li><a href="https://github.com/nvssynthesis/shredverb"> download </a></li>
-				</ul>
-			</li> 
-			<li><a href="wtianns.html">wtianns: wavetable-inspired artificial neural network synthesis</a></li>
-				<ul>
-					<li><a href="https://github.com/nvssynthesis/wtianns"> download </a></li>
-				</ul>
-			</li>
-			<!--<h3>plugins (vst/au)</h3>-->
-			<li>csg: the curl and skew generator <br>
-				<img border="0" alt="csg" src="csg_pic.png" width="380" height="250"> 
-				<ul>
-					<li><a href="https://github.com/nvssynthesis/csg"> download </a></li>
-					<li><a href="https://youtu.be/okdVPLvdnEc"> presentation at heretical sound synthesis</a></li>
-				</ul>
-			</li> 
-			<li>timbre space analysis-resynthesis application (TSARA) <br>
-				<ul>
-					<li><a href="https://github.com/nvssynthesis/TSARA"> download </li>
-				</ul>
-			</li>
-			<!--<h3>pd externals (vst/au)</h3>-->
-			<li>vdpll~, a phase-locked loop pd external
-				<ul>
-					<li><a href="https://github.com/nvssynthesis/vdpll"> download </a></li>
-				</ul>
-			</li>
-			<li>tvap~, a time-variant allpass filter pd external
-				<ul>
-					<li><a href="https://github.com/nvssynthesis/tvap"> download </a></li>
-				</ul>
-			</li>
-			<!--<h3>misc</h3>-->
-			<li>nkvdu_libraries, my c++ audio processing libraries
-				<ul>
-					<li><a href="https://github.com/nvssynthesis/nkvdu_libraries"> download </a></li>
-				</ul>
-			</li>
-			<!--<h3>pd patches</h3>-->
-			<!-- <li>scaleQuantize, a microtonal quantizer for pure data
-				<ul>
-					<li><a href="https://github.com/nvssynthesis/pd_patches/tree/master/scaleQuantize"> download </a></li>
-				</ul>
-			</li> -->
-			<!--<li>cellularWavetableSynth, a wavetable synth sequenced via cellular automaton 
-				<ul>
-					<li><a href="https://github.com/nvssynthesis/pd_patches/tree/master/cellularWavetableSynth-oversamp"> download </a></li>
-				</ul>
-			</li>-->
-			<!-- <li>DIY modular synth builds
-				<ul>
-					<li><a href="modular.html"> modular </a></li>
-				</ul>
-			</li> -->
-			
-<!-- 			<div style="position: absolute; bottom: 5px; background-color: black">
-				<form action="https://www.paypal.com/donate" method="post" target="_top">
-				<input type="hidden" name="hosted_button_id" value="DXZY629DPLJ7C" />
-				<input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif" border="0" name="submit" title="PayPal - The safer, easier way to pay online!" alt="Donate with PayPal button" />
-				<img alt="" border="0" src="https://www.paypal.com/en_US/i/scr/pixel.gif" width="1" height="1" />
-				</form>
-			</div> -->
 
-		</ul>
+		</p>
+		<section id="plugins">
+			<h2>Plugins</h2>
+			<p><i>this page is under construction. the links should work.</i></p>
+			<p>Here are my plugins under development. Source code is available for all to compile on your own machine. Only CSG currently provides 
+				a binary for MacOS. I am working on getting the other plugins compiled and available for download. 
+				<a href="contact.html">Contact</a> me if you are interested but having any troubles!.</p>
+			</p>
+			<ul>
+				<li>csg (curl and skew generator) <br>
+					<img border="0" alt="csg" src="assets/images/csg.png" class="responsive-image">
+					<ul>
+						<li>Preview Sound:
+							<audio controls>
+								<source src="assets/sounds/CSG_new_drone.wav" type="audio/wav">
+								Your browser does not support the audio element.
+							</audio>
+						</li>
+						<li><a href="assets/binaries/nvssynthesis%20csg%20v0.3.0/nvssynthesis_csg_v0.3.0.zip" download> download MacOS Universal VST3/AU/Standalone </a></li>						<li><a href="https://github.com/nvssynthesis/csg"> source code </a></li>
+						<li><a href="https://youtu.be/okdVPLvdnEc"> presentation at heretical sound synthesis</a></li>
+					</ul>
+				</li> 
+				<li>shredverb <br>
+					<p> Shredberb is a FDN-based reverb with a twist: it is composed of audio-rate modulatable allpass filters 
+						This allows the reverb to be twisted into insane distortion territory.
+					</p>
+					<img border="0" alt="shredverb" src="assets/images/shredverb.png" class="responsive-image""> 
+					<ul>
+					<li>Preview Video:
+						<video controls class="responsive-image">
+							<source src="assets/video/slicer_granular%20+%20shredverb.mp4" type="video/mp4">
+							Your browser does not support the video tag.
+						</video>
+					</li>						
+					<li><a href="https://github.com/nvssynthesis/shredverb"> source code </a></li>
+					</ul>
+				</li> 
+				<li>slicer-granular <br>
+					<p>this instrument is a basic granular synth. It was developed as the backbone of the more advanced TSN Granular.</p>
+					<img border="0" alt="slicer granular" src="assets/images/slicer_granular.png" class="responsive-image">
+					<ul>
+						<li><a href="https://github.com/nvssynthesis/slicer_granular"> source code </a></li>
+						<li><a href="https://youtu.be/HsOIzlNEIDU?si=B0wsG_hkSkqrWcqI"> video </a></li>
+					</ul>
+				</li>
+
+				<li>tsn-granular <br>
+					<p>
+						TSN Granular is a granular synthesizer that uses a multidimensional timbre space to access various grains as events from the analyzed audio file. 
+						This project is very much under development still!
+					</p>
+					<img border="0" alt="tsn granular" src="assets/images/tsn-granular.png" class="responsive-image">
+					<ul>
+						<li><a href="https://github.com/nvssynthesis/tsn-granular"> source code </a></li>
+					</ul>
+				</li>
+
+
+			</ul>
+		</section>
+		<section id="miscellaneous">
+			<h2>Miscellaneous</h2>
+			<ul>
+				<li><a href="wtianns.html">wtianns: wavetable-inspired artificial neural network synthesis</a></li>
+					<ul>
+						<li><a href="https://github.com/nvssynthesis/wtianns"> source code </a></li>
+					</ul>
+				</li>
+				
+				<li>vdpll~, a phase-locked loop pd external
+					<ul>
+						<li><a href="https://github.com/nvssynthesis/vdpll"> source code </a></li>
+					</ul>
+				</li>
+				<li>tvap~, a time-variant allpass filter pd external
+					<ul>
+						<li><a href="https://github.com/nvssynthesis/tvap"> source code </a></li>
+					</ul>
+				</li>
+				<!--<h2>misc</h2>-->
+				<li>nkvdu_libraries, my c++ audio processing libraries
+					<ul>
+						<li><a href="https://github.com/nvssynthesis/nkvdu_libraries"> source code </a></li>
+					</ul>
+				</li>
+			</ul>
+		</section>
 		</div>
+
 	</body>
+	<p></p>
+	<div style="position: fixed; bottom: 5px; left: 0; right: 0; background-color: black; text-align: center;">
+		<form action="https://www.paypal.com/donate" method="post" target="_top">
+			<input type="hidden" name="hosted_button_id" value="DXZY629DPLJ7C" />
+			<input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif" border="0" name="submit" title="PayPal - The safer, easier way to pay online!" alt="Donate with PayPal button" />
+			<img alt="" border="0" src="https://www.paypal.com/en_US/i/scr/pixel.gif" width="1" height="1" />
+		</form>
+	</div>
 </html>

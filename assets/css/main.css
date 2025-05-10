@@ -1,0 +1,143 @@
+html {
+    font-family: "Courier New", Times, serif;
+    background: black;
+    color: white;
+    line-height: 120%;
+    max-width: 90%;
+    margin: auto;
+}
+
+body {
+	margin: auto;
+}
+
+header {
+	background: black;
+	color: white;
+	margin: auto;/*0% 0% 0% 2%;*/
+}
+
+header h1 {
+	margin: 20;
+	display: flex;
+	color: white;
+}
+
+nav ul {
+	margin: auto;/*0px 0px 0px 10px;*/
+	display: inline-block;
+	font-size: 12px;
+}
+
+
+nav ul li {
+	background: black;
+	color: white;
+	display: inline-block;
+	list-style-type: none;
+	padding: 5px 5px;
+}
+
+nav ul li a {
+	color: white;
+}
+
+body p {
+    font-size: 14px;
+    margin: auto;/*2% 0% 0% 2%;*/
+}
+
+ul li {
+	font-size: 14px;
+	list-style-type: circle;
+}
+ul li li {
+	list-style-type: square;
+	color: white;
+	font-size: 14px;
+}
+
+
+a:link  {
+	color: white;
+}
+a:visited {
+	color: #5985ff;
+}
+
+a:hover {
+	color: pink;
+}
+a:active {
+	color: purple;
+}
+
+address {
+  display: block;
+  /*font-style: underline;*/
+}
+
+/* Make the image responsive */
+.responsive-image {
+    max-width: 100%; /* Scale down to fit the container */
+    height: auto; /* Maintain aspect ratio */
+    max-height: 420px; /* Optional: Limit the height */
+    display: block; /* Optional: Center the image if needed */
+    margin: 0 auto; /* Optional: Center the image horizontally */
+}
+
+/* Flexbox container for the image gallery */
+.image-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px; /* Space between images */
+    justify-content: center; /* Center the images */
+    padding: 16px;
+}
+
+/* Individual images in the gallery */
+.gallery-image {
+    flex: 1 1 calc(25% - 16px); /* Adjust width to fit 4 images per row */
+    max-width: calc(25% - 16px); /* Prevent images from exceeding their container */
+    height: auto; /* Maintain aspect ratio */
+    object-fit: cover; /* Ensure images fit nicely */
+    border: 1px solid #ccc; /* Optional: Add a border */
+    border-radius: 8px; /* Optional: Add rounded corners */
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 1024px) {
+    .gallery-image {
+        flex: 1 1 calc(33.33% - 16px); /* 3 images per row */
+        max-width: calc(33.33% - 16px);
+    }
+}
+
+@media (max-width: 768px) {
+    .gallery-image {
+        flex: 1 1 calc(50% - 16px); /* 2 images per row */
+        max-width: calc(50% - 16px);
+    }
+}
+
+@media (max-width: 480px) {
+    .gallery-image {
+        flex: 1 1 100%; /* 1 image per row */
+        max-width: 100%;
+    }
+}
+/*
+.sidenav a {
+	padding: 6px 8px 6px 16px;
+	text-decoration: none;
+	color: #818181;
+	display: block;
+}
+
+.row:after {
+	clear: both;
+	content: " ";
+	display: table;
+}
+*/
+
