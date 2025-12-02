@@ -1,20 +1,45 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 html {
     font-family: "Courier New", Times, serif;
-    background: black;
-    color: white;
+    background: #0a0a0a;
+    color: #e8e8e8;
     line-height: 120%;
-    max-width: 90%;
-    margin: auto;
+}
+html, body {
+    height: 100%;
+}
+body {
+    display: flex;
+    flex-direction: column;
+    font-family: 'Courier New', Courier, monospace;
+    line-height: 1.6;
+    color: #e8e8e8;
+    background: #0a0a0a;
 }
 
-body {
-	margin: auto;
+body p {
+    font-size: 14px;
+    margin: auto;/*2% 0% 0% 2%;*/
+}
+p + p {
+    margin-top: 1rem;
+}
+
+main {
+    flex: 1;
+    max-width:90%;
+    margin: 3rem auto;
+    padding: 0 2rem;
 }
 
 header {
-	background: black;
-	color: white;
-	margin: auto;/*0% 0% 0% 2%;*/
+    background: #1a1a1a;
+    border-bottom: 1px solid #2a2a2a;
+    padding: 1.5rem 2rem;
 }
 
 header h1 {
@@ -23,28 +48,27 @@ header h1 {
 	color: white;
 }
 
-nav ul {
-	margin: auto;/*0px 0px 0px 10px;*/
-	display: inline-block;
-	font-size: 12px;
+.tagline {
+    font-size: 1.2rem;
+    line-height: 1.5;
+    color: #f0f0f0;
+    margin: 2rem auto;
+    padding: 1.5rem 0;
+    max-width: 85%;
+    text-align: center;
+    border-top: 1px solid #2a2a2a;
+    border-bottom: 1px solid #2a2a2a;
 }
 
-
-nav ul li {
-	background: black;
-	color: white;
-	display: inline-block;
-	list-style-type: none;
-	padding: 5px 5px;
+.primary {
+    margin-bottom: 5rem;
 }
 
-nav ul li a {
-	color: white;
-}
-
-body p {
-    font-size: 14px;
-    margin: auto;/*2% 0% 0% 2%;*/
+.site-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: #f0f0f0;
 }
 
 ul li {
@@ -53,10 +77,122 @@ ul li {
 }
 ul li li {
 	list-style-type: square;
-	color: white;
+	color: #f0f0f0;
 	font-size: 14px;
 }
 
+nav ul {
+    list-style: none;
+    display: flex;        /* Change from inline-block to flex */
+    gap: 2rem;           /* Add gap instead of padding on li */
+    margin: auto;
+}
+nav ul li {
+    list-style-type: none;
+}
+nav ul li a.active {
+    color: #f0f0f0;
+    font-weight: 600;
+    border-bottom: 2px solid #f0f0f0;
+    padding-bottom: 2px;
+}
+nav ul li a {
+    text-decoration: none;
+    color: #b0b0b0;
+    font-size: 0.95rem;
+    transition: color 0.2s;
+}
+nav ul li a:hover {
+    color: #f0f0f0;
+}
+nav a:hover {
+    color: #f0f0f0;
+}
+nav a {
+    text-decoration: none;
+    color: #b0b0b0;
+    font-size: 0.95rem;
+    transition: color 0.2s;
+}
+
+.about-content {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+.about-photo {
+    max-width: 400px;    
+    height: auto;
+    border-radius: 8px;
+    margin-top: 3%;
+}
+@media (max-width: 1080px) {
+    .about-content {
+        flex-direction: column;
+    }
+    
+    .about-photo {
+        max-width: 400px;
+        margin-top: 0;
+    }
+}
+
+.page-title {
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 600;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+    color: #f0f0f0;
+}
+
+.page-description {
+    color: #b0b0b0;
+    margin-bottom: 3rem;
+    padding-left: 5%;
+    padding-right: 5%;
+    font-size: 1.1rem;
+}
+
+.section-heading {
+    font-size: 1.75rem;
+    font-weight: 600;
+    margin: 2rem 0 1.5rem 0;
+    color: #f0f0f0;
+}
+
+.item {
+    background: #1a1a1a;
+    border-radius: 8px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.3);
+}
+
+.item-title {
+    font-size: 1.25rem;
+    font-weight: 500;
+    margin-bottom: 1.5rem;
+    color: #f0f0f0;
+}
+
+.item p {
+    margin-bottom: 0.1rem; 
+}
+
+.item ul {
+    margin-left: 2rem;
+    margin-bottom: 1rem;
+}
+
+.item ul li {
+    margin-bottom: 0.5rem;
+}
+
+.item img {
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+}
 
 a:link  {
 	color: white;
@@ -64,7 +200,6 @@ a:link  {
 a:visited {
 	color: #5985ff;
 }
-
 a:hover {
 	color: pink;
 }
@@ -77,32 +212,44 @@ address {
   /*font-style: underline;*/
 }
 
-/* Make the image responsive */
+.media-section {
+    margin-bottom: 1.5rem;
+}
+.media-section:last-child {
+    margin-bottom: 0;
+}
+.media-label {
+    font-size: 0.9rem;
+    color: #b0b0b0;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+}
+audio {
+    width: 100%;
+    margin-bottom: 1rem;
+}
 .responsive-image {
-    max-width: 100%; /* Scale down to fit the container */
-    height: auto; /* Maintain aspect ratio */
-    max-height: 420px; /* Optional: Limit the height */
-    display: block; /* Optional: Center the image if needed */
-    margin: 0 auto; /* Optional: Center the image horizontally */
+    max-width: 100%;
+    height: auto;
+    max-height: 420px; 
+    display: block;
+    margin: 0 auto; 
 }
 
-/* Flexbox container for the image gallery */
 .image-gallery {
     display: flex;
     flex-wrap: wrap;
-    gap: 16px; /* Space between images */
-    justify-content: center; /* Center the images */
+    gap: 16px; 
+    justify-content: center; 
     padding: 16px;
 }
-
-/* Individual images in the gallery */
 .gallery-image {
     flex: 1 1 calc(25% - 16px); /* Adjust width to fit 4 images per row */
     max-width: calc(25% - 16px); /* Prevent images from exceeding their container */
     height: auto; /* Maintain aspect ratio */
     object-fit: cover; /* Ensure images fit nicely */
-    border: 1px solid #ccc; /* Optional: Add a border */
-    border-radius: 8px; /* Optional: Add rounded corners */
+    border: 1px solid #ccc; /* Add a border */
+    border-radius: 8px; /* Add rounded corners */
 }
 
 /* Responsive adjustments for smaller screens */
@@ -112,14 +259,12 @@ address {
         max-width: calc(33.33% - 16px);
     }
 }
-
 @media (max-width: 768px) {
     .gallery-image {
         flex: 1 1 calc(50% - 16px); /* 2 images per row */
         max-width: calc(50% - 16px);
     }
 }
-
 @media (max-width: 480px) {
     .gallery-image {
         flex: 1 1 100%; /* 1 image per row */
@@ -130,25 +275,19 @@ address {
 .responsive-video {
     display: block; /* Treat the iframe as a block element */
     margin: 0 auto; /* Center the iframe horizontally */
-    width: 80%; /* Set a default width (adjust as needed) */
+    width: 66%; /* Set a default width (adjust as needed) */
     max-width: 800px; /* Limit the maximum width */
     height: auto; /* Maintain aspect ratio */
     aspect-ratio: 16 / 9; /* Ensure the video maintains a 16:9 aspect ratio */
     border-radius: 8px; /* Optional: Add rounded corners */
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional: Add a subtle shadow */
 }
-/*
-.sidenav a {
-	padding: 6px 8px 6px 16px;
-	text-decoration: none;
-	color: #818181;
-	display: block;
-}
 
-.row:after {
-	clear: both;
-	content: " ";
-	display: table;
-}
-*/
 
+footer {
+    background: #1a1a1a;
+    border-top: 1px solid #2a2a2a;
+    padding: 1.5rem 2rem;
+    text-align: center;
+    margin-top: 4rem;
+}

@@ -1,0 +1,192 @@
+<!--
+	TODO:
+	make project descriptions appear as hover over text
+	it should move down the rest of the page to make space for description
+	or, it doesn't have to be hover. it could just be when you click, the description appears instead of going to another page.
+-->
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>software</title>
+		<link href="/assets/css/main.css" rel="stylesheet" type="text/css"/>
+	</head>
+
+	<body>
+		<header>
+		<h1 class="site-title">nvssynthesis</h1>
+			<nav>
+				<ul>
+					<li><a href="/">home</a></li>
+					<li><a href="/pages/projects.html" class="active">projects</a></li>
+					<li><a href="/pages/links.html">links</a></li>
+				</ul>
+			</nav>
+		</header>
+		<main>
+			<p class="page-description">
+				Audio software exploring chaotic synthesis, timbre space navigation, and experimental DSP techniques.
+				All are open-source; compile from source or download precompiled binaries where available.
+			<br>
+				Having trouble? <a href="/pages/contact.html">Drop me a line.</a>
+			</p>
+
+			<section id="plugins">
+				<h3 class="section-heading">Plugins</h3>
+				<div class="item">
+					<h4 class="item-title">csg (curl and skew generator)</h4>
+
+					<p>CSG is a chaotic synthesizer. Its sole oscillator features a feedback loop influencing its 
+						instantaneous phase after being processed with phase modulation and bit depth reduction, which 
+						cumulatively cause unpredictable behavior. the oscillator sounds alive and 'squargly'.</p>
+
+					<p>The instrument also features two versions of an analogue-modeled state variable filter. The 
+						'vanilla' version is properly modeled, while the 'chaotic' version breaks the modeling 
+						accuracy, leading to further sputtery madness.</p>
+
+					<img border="0" alt="csg" src="/assets/images/csg 0.5.2.png" class="responsive-image">
+					
+					<div class="media-section">
+						<div class="media-label">Preview Sound:</div>
+						<audio controls>
+							<source src="/assets/sounds/CSG_new_drone.wav" type="audio/wav">
+							Your browser does not support the audio element.
+						</audio>
+					</div>
+					
+					<div class="media-section">
+						<div class="media-label">Preview Video:</div>
+						<iframe 
+							class="responsive-video" 
+							src="https://www.youtube.com/embed/PxmxAkNC4sI" 
+							title="YouTube video player" 
+							frameborder="0" 
+							allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+							allowfullscreen>
+						</iframe>
+					</div>
+					
+					<div class="links">
+						<a href="/assets/binaries/nvssynthesis%20csg%20v0.3.0/nvssynthesis_csg_v0.3.0.zip" download>download MacOS Universal VST3/AU/Standalone</a> | 
+						<a href="https://github.com/nvssynthesis/csg" target="_blank" rel="noopener noreferrer">source code</a> | 
+						<a href="https://youtu.be/okdVPLvdnEc" target="_blank" rel="noopener noreferrer">presentation at heretical sound synthesis</a>
+					</div>
+				</div>
+				
+				<div class="item">
+					<h4 class="item-title">shredverb</h4>
+					<p>Shredverb is a feedback delay network (FDN) based reverb with a twist: it is composed of audio-rate modulatable allpass filters. 
+						This allows the reverb to be continuously deformed into insane distortion territory.</p>
+					<img border="0" alt="shredverb" src="/assets/images/shredverb.png" class="responsive-image">
+					
+					<div class="media-section">
+						<div class="media-label">Preview Video:</div>
+						<iframe 
+							class="responsive-video" 
+							src="https://www.youtube.com/embed/dQpZwZHz4Zg" 
+							title="YouTube video player" 
+							frameborder="0" 
+							allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+							allowfullscreen>
+						</iframe>
+					</div>
+					
+					<div class="links">
+						<a href="https://github.com/nvssynthesis/shredverb" target="_blank" rel="noopener noreferrer">source code</a>
+					</div>
+				</div>
+
+				<div class="item">
+					<h4 class="item-title">slicer-granular</h4>
+					<p>this instrument is a basic granular synth, developed as the backbone of the more advanced tsn-granular, below.</p>
+					<img border="0" alt="slicer granular" src="/assets/images/slicer-granular.png" class="responsive-image">
+					<div class="links">
+							<a href="https://github.com/nvssynthesis/slicer_granular" target="_blank" rel="noopener noreferrer"> source code </a>
+					</div>
+				</div>
+
+				<div class="item">
+					<h4 class="item-title">tsn-granular</h4>
+					<p>
+						TSN, in nvssynthesis lingo, means <i>timbre space navigation.</i>
+						TSN Granular is an extension of the above slicer-granular synthesizer, augmenting its capabilities by:
+					</p>
+					<ul>
+						<li>performing timbral analysis on the referenced audio file</li>
+						<li>organizing the detected 'events' of the waveform in a multidimensional timbre space based on the analysis</li>
+						<li>allowing the user to navigate through that timbre space, with a combination of manual and automatic navigators.</li>
+					</ul>
+					<p>
+						Navigating the timbre space behaves in a smooth manner via the use of a triangulation algorithm.
+						When a point is selected, it most likely does not fall precisely on one of the preexisting events.
+						Thus, a <a href="https://en.wikipedia.org/wiki/Delaunay_triangulation" target="_blank" rel="noopener noreferrer">Delaunay triangulation algorithm</a> finds the triangle of existing events that the selected point falls within, 
+						and performs a barycentric interpolation to determine the relative weights of each event in the triangle.
+						These weights are used to apply a 3-way crossfade between the audio grains being played back from each event.
+					</p>
+					<p>
+						The automatic navigators include:
+						<ul>
+							<li>2D LFO, which is completely periodic and has a variable waveshape</li>
+							<li><a href="https://en.wikipedia.org/wiki/Random_walk" target="_blank" rel="noopener noreferrer">Random walk</a>, a simple pseudo-random navigation algorithm</li>
+							<li><a href="https://www.algosome.com/articles/lorenz-attractor-programming-code.html" target="_blank" rel="noopener noreferrer">Lorenz attractor</a>, a 3D chaotic system projected onto 2D space</li>
+							<li><a href="https://sprott.physics.wisc.edu/pubs/paper428.pdf" target="_blank" rel="noopener noreferrer">Hyperchaos</a>, a 4D chaotic attractor projected into 2D space</li>
+					</p>
+					<img border="0" alt="tsn granular" src="/assets/images/tsn-granular 0.5.4.png" class="responsive-image">
+					<div class="links">
+						<a href="https://github.com/nvssynthesis/tsn-granular" target="_blank" rel="noopener noreferrer">source code</a>
+					</div>
+					<div class="media-section">
+						<div class="media-label">Preview Video:</div>
+						<iframe 
+							class="responsive-video" 
+							src="https://www.youtube.com/embed/31erhH7Crb4" 
+							title="YouTube video player" 
+							frameborder="0" 
+							allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+							allowfullscreen>
+						</iframe>
+					</div>
+				</div>
+			</section> <!-- end plugins section -->
+
+			<section id="miscellaneous">
+				<h3 class="section-heading">Miscellaneous</h3>
+				<div class="item">
+					<ul>
+						<li>
+							<a href="https://github.com/nvssynthesis/nvs_libraries" target="_blank" rel="noopener noreferrer">nvs_libraries:</a> 
+							my c++ audio processing template libraries
+						</li>
+						<li>
+							<a href="https://github.com/nvssynthesis/wavetable_manifold_synthesizer" target="_blank" rel="noopener noreferrer">wavetable_manifold_synthesizer:</a> 
+							wavetable-inspired artificial neural network synthesis
+						</li>
+						<li>
+							<a href="https://github.com/nvssynthesis/vdpll" target="_blank" rel="noopener noreferrer">vdpll~:</a>
+							a phase-locked loop pd external
+						</li>
+						<li>
+							<a href="https://github.com/nvssynthesis/tvap" target="_blank" rel="noopener noreferrer">tvap~:</a> 
+							a time-variant allpass filter pd external
+						</li>
+					</ul>
+				</div>
+			</section>
+		</main>
+	<footer>
+		<p>nvssynthesis | philadelphia, ca 19143 usa | &copy; 2025 nicholas solem | <a href="mailto:nickosolem@gmail.com">contact</a></p>
+	</footer>
+	</body>
+
+
+
+	<!-- PayPal Donate Button --
+	<div style="position: fixed; bottom: 5px; left: 0; right: 0; background-color: black; text-align: center;">
+		<form action="https://www.paypal.com/donate" method="post" target="_top">
+			<input type="hidden" name="hosted_button_id" value="37K75VQX6GJ82" />
+			<input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif" border="0" name="submit" title="PayPal - The safer, easier way to pay online!" alt="Donate with PayPal button" />
+			<img alt="" border="0" src="https://www.paypal.com/en_US/i/scr/pixel.gif" width="1" height="1" />
+		</form>
+	</div>
+	>-- End PayPal Donate Button -->
+</html>
