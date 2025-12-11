@@ -1,0 +1,14 @@
+.DS_Store
+.vscode/
+
+# Node.js
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# TypeScript compiled output
+assets/js/dist/
+
+# Optional: keep source maps out of production
+*.js.map

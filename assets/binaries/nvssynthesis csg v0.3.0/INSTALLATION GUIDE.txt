@@ -1,0 +1,11 @@
+Place the .vst3 in Library/Audio/Plug-ins/VST3/
+Place the .component in Library/Audio/Plug-ins/Components/
+Place the .app in Applications/
+
+This plugin is unsigned, which means that MacOS will block it by default due to Gatekeeper. The reason for this is that Apple charges $99 / year to be an official Apple developer, which is a significant cost for independent developers with little income from their software. For details, see https://disable-gatekeeper.github.io/
+The TL;DR is:
+-open Terminal
+-copy, paste, and press enter for the following (without quotes)
+"xattr -dr com.apple.quarantine Library/Audio/Plug-ins/VST3/csg" to disable gatekeeper for VST3
+"xattr -dr com.apple.quarantine Library/Audio/Plug-ins/Components/csg" to disable gatekeeper for AU
+"xattr -dr com.apple.quarantine Applications/csg" to disable gatekeeper for standalone
