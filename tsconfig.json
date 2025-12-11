@@ -1,0 +1,26 @@
+{
+  "compilerOptions": {
+    "target": "ES2020",
+    "module": "ESNext", 
+    "moduleResolution": "node", // find modules like Node.js does
+    "lib": ["ES2020", "DOM", "DOM.Iterable"],
+    "allowJs": true,
+    "outDir": "./assets/js/dist",
+    "rootDir": "./assets/js/src",
+    "strict": true,             // picky about errors
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "resolveJsonModule": true,  // enable importing JSON files
+    "isolatedModules": true,
+    "noEmit": false,            // actually create the .js files
+    "sourceMap": true           // enable source maps for debugging
+  },
+  "include": [
+    "assets/js/src/**/*"
+  ],
+  "exclude": [
+    "node_modules",
+    "assets/js/dist"
+  ]
+}
