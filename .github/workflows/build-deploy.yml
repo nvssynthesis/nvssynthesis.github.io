@@ -31,11 +31,15 @@ jobs:
       - name: Build TypeScript
         run: npm run build
       
-      - name: List build outputs
+      - name: Prepare deployment directory (exclude CI files, include dist)
         run: |
-          echo "Workspace contents before deploy:" && ls -la
-          echo "Dist contents:" && ls -la assets/js/dist || echo "No dist directory found"
-      
+          mkdir -p deploy
+          rsync -av --delete \
+          --exclude '.git/' \
+          --exclude '.github/' \
+          --exclude 'node_modules/' \
+          ./ deploy/
+
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
         with:
