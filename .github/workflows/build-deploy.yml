@@ -31,17 +31,24 @@ jobs:
       - name: Build TypeScript
         run: npm run build
       
+      - name: Check dist after build
+        run: |
+          echo "=== Checking if dist exists after build ==="
+          ls -la assets/js/dist/ || echo "ERROR: dist directory not found!"
+
       - name: Prepare deployment directory (exclude CI files, include dist)
         run: |
           mkdir -p deploy
           rsync -av --delete \
-          --exclude '.git/' \
-          --exclude '.github/' \
-          --exclude 'node_modules/' \
-          ./ deploy/
-
-      - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v4
+            --exclude '.git/' \
+            --exclude '.github/' \
+            --exclude 'node_modules/' \
+            --exclude 'deploy/' \
+            ./ deploy/
+          echo "=== Contents of deploy/assets/js/ after rsync ==="
+          ls -la deploy/assets/js/ || echo "ERROR: js directory not in deploy!"
+          echo "=== Contents of deploy/assets/js/dist/ if it exists ==="
+          ls -la deploy/assets/js/dist/ || echo "dist not found in deploy"
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./deploy
