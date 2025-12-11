@@ -49,6 +49,7 @@ jobs:
           ls -la deploy/assets/js/ || echo "ERROR: js directory not in deploy!"
           echo "=== Contents of deploy/assets/js/dist/ if it exists ==="
           ls -la deploy/assets/js/dist/ || echo "dist not found in deploy"
+          rm -f deploy/.gitignore
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
