@@ -31,6 +31,11 @@ jobs:
       - name: Build TypeScript
         run: npm run build
       
+      - name: List build outputs
+        run: |
+          echo "Workspace contents before deploy:" && ls -la
+          echo "Dist contents:" && ls -la assets/js/dist || echo "No dist directory found"
+      
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
         with:

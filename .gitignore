@@ -7,8 +7,5 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
-# TypeScript compiled output
+# TypeScript compiled output (generated on deploy)
 assets/js/dist/
-
-# Optional: keep source maps out of production
-*.js.map
