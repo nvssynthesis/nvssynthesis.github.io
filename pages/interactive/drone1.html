@@ -4,32 +4,35 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Drone Synthesizer</title>
+  <link href="/assets/css/main.css" rel="stylesheet" type="text/css" />
   <style>
     body {
       margin: 0;
-      padding: 20px;
       background: #0a0a0a;
       color: #e8e8e8;
       font-family: 'Courier New', monospace;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      min-height: 100vh;
     }
-    
-    h1 {
-      font-size: 1.5rem;
-      margin-bottom: 1rem;
+    .synth-page {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+    .page-title {
+      font-size: 1.8rem;
+      margin: 1.5rem 0 0.5rem;
       color: #f0f0f0;
+      text-align: center;
     }
-    
     .info {
       text-align: center;
       margin-bottom: 1.5rem;
       color: #b0b0b0;
-      font-size: 0.9rem;
+      font-size: 0.95rem;
     }
-    
+    .canvas-wrap {
+      display: flex;
+      justify-content: center;
+    }
     #canvas {
       border: 2px solid #2a2a2a;
       background: #1a1a1a;
@@ -37,7 +40,6 @@
       touch-action: none;
       max-width: 100%;
     }
-    
     .controls {
       margin-top: 1.5rem;
       display: flex;
@@ -45,14 +47,12 @@
       gap: 1rem;
       align-items: center;
     }
-    
     .controls > :first-child {
       display: flex;
       gap: 1rem;
       flex-wrap: wrap;
       justify-content: center;
     }
-    
     button {
       background: #2a2a2a;
       color: #e8e8e8;
@@ -64,55 +64,40 @@
       border-radius: 4px;
       transition: all 0.2s;
     }
-    
-    button:hover {
-      background: #3a3a3a;
-      color: #f0f0f0;
-    }
-    
-    button:active {
-      background: #4a4a4a;
-    }
+    button:hover { background: #3a3a3a; color: #f0f0f0; }
+    button:active { background: #4a4a4a; }
     select {
-        background: #2a2a2a;
-        color: #e8e8e8;
-        border: 1px solid #3a3a3a;
-        padding: 0.75rem 1rem;
-        font-family: 'Courier New', monospace;
-        font-size: 1rem;
-        cursor: pointer;
-        border-radius: 4px;
+      background: #2a2a2a;
+      color: #e8e8e8;
+      border: 1px solid #3a3a3a;
+      padding: 0.75rem 1rem;
+      font-family: 'Courier New', monospace;
+      font-size: 1rem;
+      cursor: pointer;
+      border-radius: 4px;
     }
-
-    select:hover {
-        background: #3a3a3a;
-    }
-
+    select:hover { background: #3a3a3a; }
     .slider-group {
       display: flex;
       gap: 0.5rem;
       align-items: center;
     }
-
     input[type="range"] {
       width: 120px;
       cursor: pointer;
     }
-
     .slider-label {
       font-size: 0.85rem;
       color: #b0b0b0;
       width: 85px;
       text-align: right;
     }
-    
     .slider-value {
       font-size: 0.85rem;
       color: #b0b0b0;
       width: 80px;
       text-align: left;
     }
-
     .status {
       margin-top: 1rem;
       padding: 0.5rem 1rem;
@@ -120,18 +105,33 @@
       border-radius: 4px;
       font-size: 0.85rem;
       color: #b0b0b0;
+      text-align: center;
     }
   </style>
 </head>
 <body>
-  <h1>4-Operator Drone</h1>
-  <div class="info">
-    Click+drag cursor (desktop) or touch (phone) to control operator amplitudes<br>
-  </div>
+  <header>
+    <h1 class="site-title">nvssynthesis</h1>
+    <nav>
+      <ul class="nav-list">
+        <li><a href="/">home</a></li>
+        <li><a href="/pages/projects.html">projects</a></li>
+        <li><a href="/pages/interactive/drone1.html" class="active">interactive</a></li>
+        <li><a href="/pages/links.html">links</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="synth-page">
+    <h2 class="page-title">Drone Synthesizer</h2>
+    <div class="info">
+      Click+drag cursor (desktop) or touch (phone) to control operator amplitudes<br>
+    </div>
+    <div class="canvas-wrap">
+      <canvas id="canvas" width="600" height="600"></canvas>
+    </div>
   
-  <canvas id="canvas" width="600" height="600"></canvas>
-  
-  <div class="controls">
+    <div class="controls">
     <div>
       <button id="startBtn">Start Audio</button>
       <select id="algorithmSelect">
@@ -167,10 +167,10 @@
       <input type="range" id="volumeSlider" min="-100" max="6" value="-6" step="0.1">
       <span id="volumeValue" class="slider-value">-6.0 dB</span>
     </div>
+    
+    <div class="status" id="status">Click Start Audio to begin</div>
   </div>
-  
-  
-  <div class="status" id="status">Click Start Audio to begin</div>
+  </main>
 
   <script type="module" src="/assets/js/dist/4x-drone.js"></script>
 </body>
