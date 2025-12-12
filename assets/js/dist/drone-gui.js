@@ -31,6 +31,7 @@ export class DroneGUI {
         this.setupEventListeners();
         this.initializeDisplayValues();
         this.initializeCursorPosition();
+        this.syncCanvasSize();
         this.draw();
     }
     initializeCursorPosition() {
@@ -43,6 +44,12 @@ export class DroneGUI {
         // This gives us normX = 0.5, normY = 0.5 (center)
         this.cursorX = this.canvas.width * 0.5;
         this.cursorY = this.canvas.height * 0.5;
+    }
+    syncCanvasSize() {
+        const rect = this.canvas.getBoundingClientRect();
+        // use CSS pixels as canvas internal size
+        this.canvas.width = Math.round(rect.width);
+        this.canvas.height = Math.round(rect.height);
     }
     setupEventListeners() {
         // start/stop button
@@ -150,6 +157,10 @@ export class DroneGUI {
                 this.updatePosition(touch.clientX, touch.clientY);
             }
         });
+        window.addEventListener('resize', () => {
+            this.syncCanvasSize();
+            this.draw();
+        });
     }
     initializeDisplayValues() {
         // initialize display values to match actual slider positions (handles browser form state caching)
@@ -209,12 +220,12 @@ export class DroneGUI {
         const rect = this.canvas.getBoundingClientRect();
         const canvasX = x - rect.left;
         const canvasY = y - rect.top;
-        // store clipped cursor position
-        this.cursorX = Math.max(0, Math.min(this.canvas.width, canvasX));
-        this.cursorY = Math.max(0, Math.min(this.canvas.height, canvasY));
-        // normalize to [0..1]
-        const normX = canvasX / this.canvas.width;
-        const normY = canvasY / this.canvas.height;
+        // clamp and store in CSS pixel coordinates (canvas.width/height now matches CSS size)
+        this.cursorX = Math.max(0, Math.min(rect.width, canvasX));
+        this.cursorY = Math.max(0, Math.min(rect.height, canvasY));
+        // normalize to [0..1] using CSS pixel bounds
+        const normX = this.cursorX / rect.width;
+        const normY = this.cursorY / rect.height;
         // always update synth parameters (will take effect when audio starts if not running)
         this.callbacks.onAmplitudeUpdate(normX, normY);
     }
