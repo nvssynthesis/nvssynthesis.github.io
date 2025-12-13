@@ -12,6 +12,18 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>projects</title>
 	<link href="/assets/css/main.css" rel="stylesheet" type="text/css" />
+	<style>
+		.anchor-link {
+			text-decoration: none;
+			color: #666;
+			margin-right: 0.5rem;
+			transition: color 0.2s;
+			font-size: 0.9em;
+		}
+		.anchor-link:hover {
+			color: #aaa;
+		}
+	</style>
 	</head>
 
 	<body>
@@ -35,9 +47,9 @@
 			</p>
 
 			<section id="plugins">
-				<h3 class="section-heading">Plugins</h3>
-				<div class="item">
-					<h4 class="item-title">csg (curl and skew generator)</h4>
+				<h3 class="section-heading"><a href="#plugins" class="anchor-link">#</a> Plugins</h3>
+				<div class="item" id="csg">
+					<h4 class="item-title"><a href="#csg" class="anchor-link">#</a> csg (curl and skew generator)</h4>
 
 					<p>CSG is a chaotic synthesizer. Its sole oscillator features a feedback loop influencing its 
 						instantaneous phase after being processed with phase modulation and bit depth reduction, which 
@@ -76,8 +88,8 @@
 					</div>
 				</div>
 				
-				<div class="item">
-					<h4 class="item-title">shredverb</h4>
+				<div class="item" id="shredverb">
+					<h4 class="item-title"><a href="#shredverb" class="anchor-link">#</a> shredverb</h4>
 					<p>Shredverb is a feedback delay network (FDN) based reverb with a twist: it is composed of audio-rate modulatable allpass filters. 
 						This allows the reverb to be continuously deformed into insane distortion territory.</p>
 					<img border="0" alt="shredverb" src="/assets/images/shredverb.png" class="responsive-image">
@@ -99,8 +111,8 @@
 					</div>
 				</div>
 
-				<div class="item">
-					<h4 class="item-title">slicer-granular</h4>
+				<div class="item" id="slicer-granular">
+					<h4 class="item-title"><a href="#slicer-granular" class="anchor-link">#</a> slicer-granular</h4>
 					<p>this instrument is a basic granular synth, developed as the backbone of the more advanced tsn-granular, below.</p>
 					<img border="0" alt="slicer granular" src="/assets/images/slicer-granular.png" class="responsive-image">
 					<div class="links">
@@ -108,8 +120,8 @@
 					</div>
 				</div>
 
-				<div class="item">
-					<h4 class="item-title">tsn-granular</h4>
+				<div class="item" id="tsn-granular">
+					<h4 class="item-title"><a href="#tsn-granular" class="anchor-link">#</a> tsn-granular</h4>
 					<p>
 						TSN, in nvssynthesis lingo, means <i>timbre space navigation.</i>
 						TSN Granular is an extension of the above slicer-granular synthesizer, augmenting its capabilities by:
@@ -153,26 +165,31 @@
 			</section> <!-- end plugins section -->
 
 			<section id="miscellaneous">
-				<h3 class="section-heading">Miscellaneous</h3>
+				<h3 class="section-heading"><a href="#miscellaneous" class="anchor-link">#</a> Miscellaneous</h3>
 				<div class="item">
 					<ul>
-						<li>
+						<li id="drone1">
+							<a href="#drone1" class="anchor-link">#</a>
 							<a href="/pages/interactive/drone1.html" target="_blank" rel="noopener noreferrer">drone1:</a> 
 							simple 4-operator FM drone synthesizer using WebAudio API and TypeScript
 						</li>
-						<li>
+						<li id="nvs-libraries">
+							<a href="#nvs-libraries" class="anchor-link">#</a>
 							<a href="https://github.com/nvssynthesis/nvs_libraries" target="_blank" rel="noopener noreferrer">nvs_libraries:</a> 
 							my c++ audio processing template libraries
 						</li>
-						<li>
+						<li id="wavetable-manifold-synthesizer">
+							<a href="#wavetable-manifold-synthesizer" class="anchor-link">#</a>
 							<a href="https://github.com/nvssynthesis/wavetable_manifold_synthesizer" target="_blank" rel="noopener noreferrer">wavetable_manifold_synthesizer:</a> 
 							wavetable-inspired artificial neural network synthesis
 						</li>
-						<li>
+						<li id="vdpll">
+							<a href="#vdpll" class="anchor-link">#</a>
 							<a href="https://github.com/nvssynthesis/vdpll" target="_blank" rel="noopener noreferrer">vdpll~:</a>
 							a phase-locked loop pd external
 						</li>
-						<li>
+						<li id="tvap">
+							<a href="#tvap" class="anchor-link">#</a>
 							<a href="https://github.com/nvssynthesis/tvap" target="_blank" rel="noopener noreferrer">tvap~:</a> 
 							a time-variant allpass filter pd external
 						</li>
